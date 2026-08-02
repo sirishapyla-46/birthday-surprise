@@ -1,0 +1,1485 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+     overflow-x: hidden;
+    overflow-y: auto;
+    background:linear-gradient(135deg,#FFEAF3,#FFF7FB,#F6EEFF);
+}
+
+/* Animated Background */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+
+    background:
+    radial-gradient(circle at 20% 20%,#ffffffaa,transparent 30%),
+    radial-gradient(circle at 80% 10%,#ffd3e6aa,transparent 30%),
+    radial-gradient(circle at 60% 90%,#e9d8ff,transparent 35%);
+
+    animation:bgMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.12);
+}
+
+}
+
+/* Floating Emojis */
+
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.particles span{
+    position:absolute;
+    bottom:-60px;
+    font-size:28px;
+    animation:floatUp linear infinite;
+}
+
+.particles span:nth-child(1){left:8%;animation-duration:12s;}
+.particles span:nth-child(2){left:25%;animation-duration:14s;}
+.particles span:nth-child(3){left:42%;animation-duration:10s;}
+.particles span:nth-child(4){left:60%;animation-duration:16s;}
+.particles span:nth-child(5){left:80%;animation-duration:13s;}
+.particles span:nth-child(6){left:92%;animation-duration:15s;}
+
+@keyframes floatUp{
+
+0%{
+transform:translateY(0);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* Sections */
+
+section{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Glass Card */
+
+.card{
+
+width:90%;
+max-width:420px;
+
+padding:45px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.6);
+
+backdrop-filter:blur(18px);
+
+text-align:center;
+
+box-shadow:0 20px 50px rgba(255,105,180,.15);
+
+animation:popup .7s;
+}
+
+@keyframes popup{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.card h1{
+
+font-size:60px;
+margin-bottom:10px;
+
+}
+
+.card h2{
+
+font-size:34px;
+color:#ff4d94;
+margin-bottom:18px;
+
+}
+
+.card p{
+
+color:#666;
+line-height:1.8;
+margin-bottom:25px;
+
+}
+
+/* Button */
+
+button{
+
+padding:16px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#ff5da8,#ff8fc7);
+
+color:white;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* Input */
+
+input{
+
+width:100%;
+
+padding:15px;
+
+border-radius:50px;
+
+border:2px solid #ffd2e8;
+
+outline:none;
+
+margin-bottom:20px;
+
+font-size:16px;
+
+text-align:center;
+
+}
+
+input:focus{
+
+border-color:#ff5da8;
+
+}
+
+/* Loading */
+
+.bar{
+
+width:100%;
+
+height:10px;
+
+background:#ffe3ef;
+
+border-radius:50px;
+
+overflow:hidden;
+
+margin-top:30px;
+
+}
+
+.progress{
+
+height:100%;
+width:0;
+
+background:linear-gradient(90deg,#ff5da8,#ff9fd3);
+
+animation:loading 3s linear forwards;
+
+}
+
+@keyframes loading{
+
+from{width:0;}
+
+to{width:100%;}
+
+}
+
+#error{
+
+margin-top:15px;
+
+font-weight:600;
+
+color:#ff4d94;
+
+}
+
+.hide{
+
+display:none !important;
+
+}
+/* ==========================
+ENVELOPE
+========================== */
+
+.envelope-container{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+.envelope{
+
+width:260px;
+height:180px;
+
+background:#ffb6cf;
+
+border-radius:12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.envelope:hover{
+
+transform:scale(1.05);
+
+}
+
+.letter{
+
+text-align:center;
+color:white;
+
+}
+
+.letter h2{
+
+font-size:45px;
+margin-bottom:10px;
+
+}
+
+.letter p{
+
+color:white;
+
+}
+
+/* Letter */
+
+.letter-card{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+
+padding:30px;
+
+text-align:center;
+
+}
+
+#typing{
+
+font-family:'Poppins',sans-serif;
+
+font-size:32px;
+
+color:#ff4d94;
+
+line-height:1.7;
+
+max-width:700px;
+
+min-height:220px;
+
+white-space:pre-line;
+
+}
+
+#continueBtn{
+
+display:none;
+
+margin-top:40px;
+
+}
+/*==========================
+Hero Section
+==========================*/
+
+#heroSection{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:40px 20px;
+
+background:linear-gradient(180deg,#fff7fb,#ffeef7);
+
+overflow:hidden;
+
+}
+
+.hero-content{
+
+text-align:center;
+
+max-width:700px;
+
+animation:fadeHero 1s;
+
+}
+
+.hero-title{
+
+font-family:'Playfair Display',serif;
+
+font-size:60px;
+
+color:#ff4d94;
+
+margin:20px 0;
+
+}
+
+.hero-title span{
+
+display:block;
+
+font-size:40px;
+
+margin-top:10px;
+
+}
+
+.small-text{
+
+letter-spacing:3px;
+
+font-size:14px;
+
+color:#999;
+
+}
+
+.hero-message{
+
+font-size:19px;
+
+line-height:1.8;
+
+margin:25px 0;
+
+color:#666;
+
+}
+
+.hero-image{
+
+width:260px;
+
+height:260px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:8px solid white;
+
+box-shadow:0 20px 40px rgba(255,105,180,.25);
+
+animation:floatPhoto 4s ease-in-out infinite;
+
+}
+
+.music-btn{
+
+margin-top:35px;
+
+}
+
+.scroll-text{
+
+margin-top:30px;
+
+font-size:18px;
+
+color:#999;
+
+cursor:pointer;
+
+animation:bounce 2s infinite;
+
+}
+
+@keyframes fadeHero{
+
+from{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes floatPhoto{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes bounce{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+/* ==========================
+SCRAPBOOK GALLERY
+========================== */
+
+#gallerySection{
+
+min-height:100vh;
+
+padding:80px 20px;
+
+background:linear-gradient(180deg,#fff7fb,#fff0f8);
+
+}
+
+.galleryHeading{
+
+text-align:center;
+
+font-size:50px;
+
+color:#ff4d94;
+
+font-family:'Playfair Display',serif;
+
+margin-bottom:15px;
+
+}
+
+.gallerySub{
+
+text-align:center;
+
+color:#777;
+
+font-size:18px;
+
+margin-bottom:50px;
+
+}
+
+.galleryGrid{
+
+max-width:1100px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+gap:35px;
+
+}
+
+.polaroid{
+
+background:white;
+
+padding:12px;
+
+border-radius:18px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+.polaroid:nth-child(odd){
+
+transform:rotate(-3deg);
+
+}
+
+.polaroid:nth-child(even){
+
+transform:rotate(3deg);
+
+}
+
+.polaroid:hover{
+
+transform:translateY(-10px) rotate(0deg) scale(1.05);
+
+}
+
+.polaroid img{
+
+width:100%;
+
+height:280px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+}
+
+.polaroid p{
+
+margin-top:15px;
+
+text-align:center;
+
+font-size:22px;
+
+color:#ff4d94;
+
+font-weight:600;
+
+}
+
+.gallery-next{
+
+text-align:center;
+
+margin-top:60px;
+
+}
+
+.next-btn{
+
+padding:16px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#ff69b4,#ff9ed2);
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+}
+
+.next-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* ==========================
+PHOTO POPUP
+========================== */
+
+.modal{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.85);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+}
+
+.modal img{
+
+max-width:90%;
+
+max-height:90%;
+
+border-radius:20px;
+
+}
+
+#closeModal{
+
+position:absolute;
+
+top:25px;
+
+right:40px;
+
+font-size:45px;
+
+color:white;
+
+cursor:pointer;
+
+}
+/* ==========================
+SECRET LETTER
+========================== */
+
+#secretSection{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(180deg,#f8f1ff,#fff8fd);
+
+padding:40px;
+
+}
+
+.letterPaper{
+
+background:white;
+
+padding:50px;
+
+border-radius:25px;
+
+max-width:750px;
+
+width:90%;
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+text-align:center;
+
+}
+
+.letterPaper h2{
+
+color:#b14cff;
+
+margin-bottom:25px;
+
+}
+
+#secretTyping{
+
+font-size:24px;
+
+line-height:1.8;
+
+color:#555;
+
+min-height:250px;
+
+white-space:pre-line;
+
+}
+
+#nextCake{
+
+display:none;
+
+margin-top:30px;
+
+}
+/* ==========================
+BIRTHDAY CAKE
+========================== */
+
+#cakeSection{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(180deg,#FFF5FB,#F7EEFF);
+
+padding:20px;
+
+}
+
+.cake-container{
+
+text-align:center;
+
+}
+
+.cake-container h2{
+
+font-size:42px;
+
+color:#ff4d94;
+
+margin-bottom:15px;
+
+}
+
+.cake-text{
+
+margin-bottom:40px;
+
+color:#666;
+
+}
+
+.cake{
+
+position:relative;
+
+width:220px;
+
+margin:40px auto;
+
+}
+
+.cake-top{
+
+height:70px;
+
+background:#FFC1E3;
+
+border-radius:18px 18px 8px 8px;
+
+}
+
+.cake-bottom{
+
+height:90px;
+
+background:#FF8EC5;
+
+border-radius:0 0 18px 18px;
+
+}
+
+.candles{
+
+display:flex;
+
+justify-content:center;
+
+gap:28px;
+
+margin-bottom:-5px;
+
+}
+
+.candles span{
+
+width:10px;
+
+height:40px;
+
+background:white;
+
+position:relative;
+
+}
+
+.flame::after{
+
+content:"";
+
+position:absolute;
+
+top:-14px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:12px;
+
+height:18px;
+
+background:orange;
+
+border-radius:50%;
+
+animation:flicker .4s infinite alternate;
+
+}
+
+@keyframes flicker{
+
+from{
+
+transform:translateX(-50%) scale(1);
+
+}
+
+to{
+
+transform:translateX(-50%) scale(1.2);
+
+}
+
+}
+/* ==========================
+FIREWORKS
+========================== */
+
+#fireworksSection{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(180deg,#16002b,#31104d,#5a2d91);
+
+position:relative;
+
+overflow:hidden;
+
+padding:30px;
+
+}
+
+.stars{
+
+position:absolute;
+
+inset:0;
+
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:60px 60px;
+
+opacity:.5;
+
+}
+
+.final-card{
+
+position:relative;
+
+z-index:2;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+padding:45px;
+
+border-radius:25px;
+
+max-width:700px;
+
+width:90%;
+
+text-align:center;
+
+color:white;
+
+}
+
+.final-card h1{
+
+font-size:48px;
+
+margin-bottom:20px;
+
+}
+
+.final-card h2{
+
+color:#ffd7ff;
+
+margin-bottom:20px;
+
+}
+
+.final-card p{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:white;
+
+}
+/* ==========================
+FINAL GIFT POPUP
+========================== */
+
+.gift-popup{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.75);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+backdrop-filter:blur(8px);
+
+z-index:99999;
+
+}
+
+.gift-card{
+
+background:white;
+
+width:90%;
+max-width:650px;
+
+padding:45px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+animation:popup .5s;
+
+}
+
+.gift-card h2{
+
+color:#ff4d94;
+
+margin-bottom:25px;
+
+}
+
+#giftTyping{
+
+font-size:28px;
+
+line-height:1.8;
+
+color:#555;
+
+white-space:pre-line;
+
+min-height:250px;
+
+}
+/* ===========================
+FINAL MEMORY WALL
+=========================== */
+
+.journey-title{
+
+font-size:38px;
+text-align:center;
+margin-top:50px;
+font-family:'Playfair Display',serif;
+color:#ffb3e6;
+
+}
+
+.journey-subtitle{
+
+max-width:700px;
+margin:20px auto 50px;
+text-align:center;
+font-size:19px;
+line-height:1.8;
+color:#f3f3f3;
+
+}
+
+.memoryGrid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:35px;
+margin-top:40px;
+
+}
+
+.mini-polaroid{
+
+background:white;
+padding:15px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+transition:.4s;
+overflow:hidden;
+transform:rotate(-3deg);
+
+}
+
+.mini-polaroid:nth-child(2){
+
+transform:rotate(2deg);
+
+}
+
+.mini-polaroid:nth-child(3){
+
+transform:rotate(-2deg);
+
+}
+
+.mini-polaroid:hover{
+
+transform:translateY(-10px) rotate(0deg) scale(1.05);
+
+}
+
+.mini-polaroid img{
+
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:12px;
+
+}
+
+.mini-polaroid h3{
+
+margin-top:18px;
+font-family:'Playfair Display',serif;
+font-size:24px;
+color:#ff4d94;
+
+}
+
+.mini-polaroid p{
+
+margin-top:12px;
+font-size:16px;
+line-height:1.7;
+color:#555;
+
+}
+
+.memoryQuote{
+
+margin-top:60px;
+text-align:center;
+font-family:'Caveat',cursive;
+font-size:38px;
+line-height:1.8;
+color:#ffe3ff;
+
+}
+
+.ending{
+
+margin-top:60px;
+text-align:center;
+font-size:22px;
+line-height:2;
+color:white;
+
+}
+
+@media(max-width:768px){
+
+.memoryGrid{
+
+grid-template-columns:1fr;
+
+}
+
+.journey-title{
+
+font-size:30px;
+
+}
+
+.memoryQuote{
+
+font-size:28px;
+
+}
+
+}
+/* Memory Photos Fix */
+
+.memory-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+
+.mini-polaroid {
+    width: 220px;
+    background: white;
+    padding: 12px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+
+.mini-polaroid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.mini-polaroid p {
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+
+#fireworksSection {
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+/* Final Letter Fix */
+
+#secretSection {
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+
+#secretSection .letter {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 20px;
+    line-height: 1.8;
+    word-wrap: break-word;
+}
+/* Final Letter Overflow Fix */
+
+#secretSection {
+    width: 90%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+#secretSection p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+/* Letter Popup Fix */
+
+.gift-popup {
+    overflow-y: auto;
+    padding: 20px;
+}
+
+
+.gift-card {
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+/* =========================
+   Memory Cards Animation
+========================= */
+
+.mini-polaroid {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: memoryShow 1s ease forwards;
+}
+
+
+.mini-polaroid:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.mini-polaroid:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.mini-polaroid:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+
+@keyframes memoryShow {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.mini-polaroid:hover {
+
+    transform: translateY(-10px) scale(1.05);
+    transition: 0.3s;
+
+}
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media(max-width:600px){
+
+    .final-card{
+
+        width:90%;
+        padding:20px;
+
+    }
+
+
+    .final-card h1{
+
+        font-size:28px;
+
+    }
+
+
+    .journey-title{
+
+        font-size:24px;
+
+    }
+
+
+    .memoryGrid{
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+    }
+
+
+    .mini-polaroid{
+
+        width:90%;
+        max-width:320px;
+
+    }
+
+
+    .ending{
+
+        font-size:16px;
+        padding:20px;
+
+    }
+
+
+    .gift-card{
+
+        width:90%;
+        max-height:75vh;
+
+    }
+
+}
+/* Floating Hearts */
+
+.hearts::before,
+.hearts::after {
+    content: "💜 💕 ❤️ 💗";
+    position: fixed;
+    bottom: -50px;
+    left: 20%;
+    font-size: 25px;
+    animation: floatHearts 8s linear infinite;
+    pointer-events: none;
+}
+
+
+.hearts::after {
+    left: 70%;
+    animation-delay: 4s;
+}
+
+
+@keyframes floatHearts {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+
+}
+/* Memory Card Hover Effect */
+
+.mini-polaroid {
+
+    transition: transform 0.4s ease;
+
+}
+
+
+.mini-polaroid:hover {
+
+    transform: rotate(3deg) scale(1.05);
+
+}

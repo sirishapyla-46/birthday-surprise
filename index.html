@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<div class="hearts"></div>
+<body>
+<audio id="bgMusic" loop>
+
+    <source src="assets/music/birthday.mp3" type="audio/mp3">
+
+</audio>
+
+<div class="background"></div>
+
+<div class="particles">
+<span>💖</span>
+<span>🌸</span>
+<span>✨</span>
+<span>🦋</span>
+<span>🤍</span>
+<span>💗</span>
+</div>
+
+<!-- COVER -->
+
+<section id="cover">
+
+<div class="card">
+
+<h1>🎁</h1>
+
+<h2>A Gift For You</h2>
+
+<p>
+Every birthday deserves
+something unforgettable.
+</p>
+
+<button id="begin">
+Tap To Begin ✨
+</button>
+
+
+</div>
+
+</section>
+
+<!-- LOADING -->
+
+<section id="loading" class="hide">
+
+<div class="card">
+
+<h2>Preparing Something Special...</h2>
+
+<div class="bar">
+<div class="progress"></div>
+</div>
+
+</div>
+
+</section>
+
+<!-- PASSWORD -->
+
+<section id="passwordPage" class="hide">
+
+<div class="card">
+
+<h1>🔒</h1>
+
+<h2>Unlock Your Surprise</h2>
+
+<input
+id="password"
+type="password"
+placeholder="Enter Password">
+
+<button id="unlock">
+Unlock ❤️
+</button>
+
+<p id="error"></p>
+
+</div>
+
+</section>
+<!-- =========================
+ENVELOPE SCREEN
+========================= -->
+
+<section id="envelopeScreen" class="hide">
+
+    <div class="envelope-container">
+
+        <div class="envelope" id="envelope">
+
+            <div class="letter">
+
+                <h2>💌</h2>
+
+                <p>Tap Me ❤️</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+LETTER SCREEN
+========================= -->
+
+<section id="letterScreen" class="hide">
+
+    <div class="letter-card">
+
+        <h1 id="typing"></h1>
+
+        <button id="continueBtn">
+            Continue ❤️
+        </button>
+
+    </div>
+
+</section>
+<!-- =========================
+ HERO SECTION
+========================= -->
+
+<section id="heroSection" class="hide">
+
+    <div class="hero-content">
+
+        <p class="small-text">
+            ✨ 03 • August • 2005 ✨
+        </p>
+
+        <h1 class="hero-title">
+
+            Happy Birthday
+
+            <span>Harshu ❤️</span>
+
+        </h1>
+
+        <p class="hero-message">
+
+            Today is all about you.
+
+            Keep smiling,
+
+            keep shining,
+
+            and keep being the amazing
+
+            person you are.
+
+        </p>
+
+        <img
+        src="assets/images/hero.jpg"
+        class="hero-image"
+        alt="Harshu">
+
+        <button class="music-btn">
+
+            ▶ Play Music
+
+        </button>
+
+        <div class="scroll-text">
+
+            ↓ Continue ↓
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+SCRAPBOOK GALLERY
+========================= -->
+
+<section id="gallerySection" class="hide">
+
+    <h2 class="galleryHeading">
+
+        📖 Our Little Scrapbook
+
+    </h2>
+
+    <p class="gallerySub">
+
+        Some memories deserve to stay forever ❤️
+
+    </p>
+
+    <div class="galleryGrid">
+
+        <div class="polaroid">
+
+            <img src="assets/images/photo1.jpg" alt="Photo 1">
+
+            <p>Cutest One 🌸</p>
+
+        </div>
+
+        <div class="polaroid">
+
+            <img src="assets/images/photo2.jpg" alt="Photo 2">
+
+            <p>Beautiful Smile ❤️</p>
+
+        </div>
+
+        <div class="polaroid">
+
+            <img src="assets/images/photo3.jpg" alt="Photo 3">
+
+            <p>Lovely Moments ✨</p>
+
+        </div>
+
+        <div class="polaroid">
+
+            <img src="assets/images/photo4.jpg" alt="Photo 4">
+
+            <p>Always Special 💖</p>
+
+        </div>
+
+    </div>
+
+    <div class="gallery-next">
+
+        <button id="openLetterBtn" class="next-btn">
+
+            💌 Open My Letter For You
+
+        </button>
+
+    </div>
+
+</section>
+<!-- =========================
+SECRET LETTER
+========================= -->
+
+<section id="secretSection" class="hide">
+
+    <div class="letterPaper">
+
+        <h2>💌 A Letter Just For You</h2>
+
+        <p id="secretTyping"></p>
+
+        <button id="nextCake" class="next-btn">
+
+            Continue 🎂
+
+        </button>
+
+    </div>
+
+</section>
+<!-- =========================
+BIRTHDAY CAKE
+========================= -->
+
+<section id="cakeSection" class="hide">
+
+    <div class="cake-container">
+
+        <h2>🎂 Make A Wish, Harshu ❤️</h2>
+
+        <p class="cake-text">
+
+            Close your eyes...
+
+            Make a beautiful wish...
+
+            Then blow out the candles ✨
+
+        </p>
+
+        <div class="cake">
+
+            <div class="candles">
+
+                <span class="flame"></span>
+                <span class="flame"></span>
+                <span class="flame"></span>
+
+            </div>
+
+            <div class="cake-top"></div>
+
+            <div class="cake-bottom"></div>
+
+        </div>
+
+        <button id="blowCandles" class="next-btn">
+
+            🕯 Blow Candles
+
+        </button>
+
+    </div>
+
+</section>
+<!-- =========================
+FIREWORKS
+========================= -->
+
+<section id="fireworksSection" class="hide">
+
+    <div class="stars"></div>
+
+    <div class="final-card">
+
+        <h1>🎉 Happy Birthday 🎉</h1>
+
+        <h2>Harshu ❤️</h2>
+
+        <p>
+
+            Wishing you endless happiness,
+            success and beautiful memories.
+
+            May all your dreams come true.
+
+            Have the most wonderful birthday! 💜
+
+        </p>
+
+        <button id="giftBtn" class="next-btn">
+
+    🎁 One Last Surprise
+
+</button>
+        <div class="journey-title">
+
+🌸 Our Journey In Three Pictures 🌸
+
+</div>
+
+<p class="journey-subtitle">
+
+From our very first picture together...
+
+to the beautiful memories we continue to create,
+
+every moment with you has become a memory worth keeping. ❤️
+
+</p>
+
+<div class="memoryGrid">
+
+<div class="mini-polaroid">
+
+<img src="assets/images/memory1.jpg" alt="Memory 1">
+
+<h3>🌸 Where It All Began</h3>
+
+<p>
+
+Our very first picture together.
+
+Who knew this simple moment
+would become one of my favorite memories?
+
+I'm really happy we met. ❤️
+
+</p>
+
+</div>
+
+<div class="mini-polaroid">
+
+<img src="assets/images/memory2.jpg" alt="Memory 2">
+
+<h3>💜 Still Making Memories</h3>
+
+<p>
+
+From our first picture
+to moments like this...
+
+Every memory with you
+has become a little treasure.
+
+And I hope there are many more to come. ✨
+
+</p>
+
+</div>
+
+<div class="mini-polaroid">
+
+<img src="assets/images/memory3.jpg" alt="Memory 3">
+
+<h3>🌼 My Favorite Smile</h3>
+
+<p>
+
+Some photos are special,
+
+not because they're perfect...
+
+but because they remind me
+
+of the happiness we shared.
+
+Keep smiling, Harshu. ❤️
+
+</p>
+
+</div>
+
+</div>
+
+<div class="memoryQuote">
+
+❝ Every picture tells a story,
+
+but these pictures remind me
+
+how lucky I am
+
+to have someone like you
+
+in my life. ❞
+
+</div>
+
+<div class="ending">
+
+✨ No matter how many pictures we take,
+
+I hope every new memory
+
+becomes even more beautiful
+
+than the last.
+
+❤️ Happy Birthday, Harshu.
+
+Made with endless love,
+
+<b>Siri 💜</b>
+
+</div>
+
+
+
+        
+
+     </div>
+
+    <!-- Gift Popup -->
+
+<div id="giftPopup" class="gift-popup hide">
+
+    <div class="gift-card">
+
+        <h2>💌 One Last Letter</h2>
+
+        <p id="giftTyping"></p>
+
+        <button id="closeGift" class="next-btn">
+
+            ❤️ Thank You
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</section>
+<!-- PHOTO POPUP -->
+
+<div id="photoModal" class="modal hide">
+
+    <span id="closeModal">&times;</span>
+
+    <img id="modalImage">
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
