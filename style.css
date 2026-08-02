@@ -1518,3 +1518,84 @@ img {
     }
 
 }
+/* =========================
+   Mobile Gallery Fix
+========================= */
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+
+.galleryGrid {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.polaroid {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+.polaroid img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media(max-width:600px){
+
+    .galleryGrid {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+
+    }
+
+
+    .polaroid {
+
+        width: 90%;
+        max-width: 320px;
+
+    }
+
+
+    .galleryHeading {
+
+        font-size: 26px;
+        text-align: center;
+
+    }
+
+
+    .gallerySub {
+
+        text-align: center;
+        padding: 0 15px;
+
+    }
+
+
+    .gallery-next {
+
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+    }
+
+
+    .next-btn {
+
+        max-width: 90%;
+        font-size: 16px;
+
+    }
+
+}
